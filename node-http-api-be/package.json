@@ -1,0 +1,10 @@
+{
+  "name": "node-http-api-be",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Anthony Salemo",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
