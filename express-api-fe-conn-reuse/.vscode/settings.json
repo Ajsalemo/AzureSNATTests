@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4388fa06-bf66-4497-82c2-991ba75ecb97/resourceGroups/ansalemo-rg/providers/Microsoft.Web/sites/ansalemo-express-api-fe-conn-reuse",
+    "appService.deploySubpath": "."
+}
