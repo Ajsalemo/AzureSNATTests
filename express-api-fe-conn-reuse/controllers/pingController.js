@@ -2,10 +2,11 @@ const express = require("express");
 const axiosInstance = require("../config/axiosInstance");
 const router = express.Router();
 
-const pingController = router.get("/", async (_, res, next) => {
+const pingController = router.get("/", (_, res, next) => {
   try {
-    const { data } = await axiosInstance.get(process.env.API_URL);
-    res.send(data);
+    axiosInstance.get(process.env.API_URL).then((data) => {
+      res.send(data.data);
+    });
   } catch (error) {
     console.log("An error has occurred: ", error);
     next(error);

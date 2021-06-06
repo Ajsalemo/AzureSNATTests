@@ -25,14 +25,14 @@ app.use(
 app.use(morgan("dev"));
 // Controllers to use with routing
 // Standard controllers
-app.use("/api/ping", pingController)
+app.use("/api/ping", pingController);
 app.use(homeController);
 
 // Catches all non matching routes and redirects it back to the root - must be placed last in the chain of middleware
 app.use(catchAllController);
 
 try {
-  app.listen(port, () => {
+  const server = app.listen(port, () => {
     console.log(`INFO: Server is listening on port ${port}`);
     console.log(
       `INFO: There is ${
@@ -40,6 +40,10 @@ try {
       } cores available to spawn node processes on`
     );
   });
+  server.keepAliveTimeout = 30 * 1000;
+  console.log(`INFO: Set keepAliveTimeout to ${30 * 1000}`);
+  server.headersTimeout = 35 * 1000;
+  console.log(`INFO: Set headersTimeout to ${35 * 1000}`);
 } catch (error) {
   console.log("ERROR: An error has occurred: ", error);
 }
