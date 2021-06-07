@@ -1,0 +1,16 @@
+{
+  "name": "node-http-api-be",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Anthony Salemo",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "staging": "pm2 start server.js --no-daemon -i 0",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "agentkeepalive": "^4.1.4",
+    "dotenv": "^10.0.0"
+  }
+}

@@ -40,10 +40,6 @@ try {
       } cores available to spawn node processes on`
     );
   });
-  server.keepAliveTimeout = 30 * 1000;
-  console.log(`INFO: Set keepAliveTimeout to ${30 * 1000}`);
-  server.headersTimeout = 35 * 1000;
-  console.log(`INFO: Set headersTimeout to ${35 * 1000}`);
 } catch (error) {
   console.log("ERROR: An error has occurred: ", error);
 }
