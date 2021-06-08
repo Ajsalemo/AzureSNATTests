@@ -1,21 +1,7 @@
-<<<<<<< HEAD
 # AzureSNATTests
-=======
-# ExpressAPI
 
-<br>
-An Express.js CRUD API that calls to a Postgres database using Sequelize. Pm2 is used for production process management and Agentkeepalive for connection reuse on calls using Axios.
+Comparisons between Node applications that do and do not use 'keep-alives' for outbound connections. Testing is implemented with Apache jMeter from 10-200+ threads with matching ramp-up times on an infinite loop.
 
-Project makeup:
-- `express` is used as the server fielding HTTP requests
-- `axios` is used for API calls to other API based endpoints
-- `postgres` is used for the 'main' part of this repository which is a CRUD based application
-- `sequelize` is used as the ORM paired with Azure Database for PostgreSQL
-- `agentkeepalive` is used for connection reuse and keepalives that is passed into `axios`
+### Implementation
 
-This project uses two approaches for making requests
-- the `controllers/axios` folder which contains API calls using Axios to test out `agentkeepalive` and connection reuse/keepalives
-- the `controllers/postgres` folder which contains calls to Postgres with the help of Sequelize to also test out the use of connection pooling.
-
-Ideally, this project is a combination of techniques created primarily for testing while using Express as a backbone. This can either be ran containerized or with Pm2 separately.
->>>>>>> 5eda6e7bebaaf42684aaa14a4df30225fd8a1a6e
+Two 'sets' of applications are in this repo. One set using Node with it's native `http` module to create the server. The other set uses `express`. Both 'sets' act as RESTful services where the 'frontend' portion will call to the backend. The backend for it's respective set is essentially a copy of the frontend, but just returns a small JSON response in the form of "{ message: pong }". 
