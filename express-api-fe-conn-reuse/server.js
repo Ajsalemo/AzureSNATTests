@@ -41,5 +41,7 @@ try {
     );
   });
 } catch (error) {
+  // Log the instance/VM name that the application is running on
+  console.log(`This instance is: ${process.env.COMPUTERNAME}`);
   console.log("ERROR: An error has occurred: ", error);
 }

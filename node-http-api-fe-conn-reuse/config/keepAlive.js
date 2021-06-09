@@ -2,7 +2,7 @@ const Agent = require("agentkeepalive").HttpsAgent;
 
 const keepaliveAgent = new Agent({
   maxSockets: 128,
-  maxFreeSockets: 128,
+  maxFreeSockets: 64,
   timeout: 60000,
   freeSocketTimeout: 30000,
 });
