@@ -22,7 +22,7 @@ app.use(
 );
 
 // Logging
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 // Controllers to use with routing
 // Standard controllers
 app.use("/api/ping", pingController);
