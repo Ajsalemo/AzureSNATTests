@@ -17,7 +17,7 @@ const httpsKeepAliveAgent = new HttpsAgent({
   // Match the number of max sockets per host
   maxFreeSockets: 160,
   timeout: 60000, // active socket keepalive for 30 seconds
-  freeSocketTimeout: 30000, // free socket keepalive for 15 seconds
+  freeSocketTimeout: 30000, // free socket keepalive for 30 seconds
 });
 
 const axiosInstance = axios.create({

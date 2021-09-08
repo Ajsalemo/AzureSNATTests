@@ -32,7 +32,7 @@ app.use(homeController);
 app.use(catchAllController);
 
 try {
-  const server = app.listen(port, () => {
+  const server = app.listen(8081, () => {
     console.log(`INFO: Server is listening on port ${port}`);
     console.log(
       `INFO: There is ${
