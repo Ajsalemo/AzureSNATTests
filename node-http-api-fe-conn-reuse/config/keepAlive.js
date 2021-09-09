@@ -1,8 +1,8 @@
 const Agent = require("agentkeepalive").HttpsAgent;
 
 const keepaliveAgent = new Agent({
-  maxSockets: 128,
-  maxFreeSockets: 64,
+  maxSockets: 128, // or 128 / os.cpus().length if running node across multiple CPUs
+  maxFreeSockets: 128, // or 128 / os.cpus().length if running node across multiple CPUs
   timeout: 60000,
   freeSocketTimeout: 30000,
 });
