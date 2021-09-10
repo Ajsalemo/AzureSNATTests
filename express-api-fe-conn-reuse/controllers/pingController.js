@@ -4,10 +4,6 @@ const router = express.Router();
 
 const pingController = router.get("/", async (_, res, next) => {
   try {
-    axiosInstance.get(process.env.API_URL).then((data) => {
-      res.send(data);
-    }).catch(e => console.log(e))
-    all.
     const { data } = await axiosInstance.get(process.env.API_URL);
     res.send(data);
   } catch (error) {
