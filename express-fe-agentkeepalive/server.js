@@ -22,7 +22,7 @@ app.use(
 );
 
 // Logging
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 // Controllers to use with routing
 // Standard controllers
 app.use("/api/ping", pingController);
@@ -32,7 +32,7 @@ app.use(homeController);
 app.use(catchAllController);
 
 try {
-  const server = app.listen(8081, () => {
+  const server = app.listen(port, () => {
     console.log(`INFO: Server is listening on port ${port}`);
     console.log(
       `INFO: There is ${

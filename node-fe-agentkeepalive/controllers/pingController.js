@@ -5,13 +5,6 @@ const pingController = (res) => {
   https
     .get(options, (response) => {
       let data = "";
-      if (options.statusChanged) {
-        console.log(
-          "[%s] agent status changed: %j",
-          Date(),
-          options.getCurrentStatus()
-        );
-      }
       response.on("data", (chunk) => {
         data += chunk;
       });
