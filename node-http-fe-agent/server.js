@@ -2,9 +2,9 @@ require("dotenv").config();
 const http = require("http");
 
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || "localhost";
+const host = process.env.HOST || "localhost"; // HOST would be an AppSetting set to 0.0.0.0 on Azure
+const pingController = require("./controllers/pingController");
 
-// TODO - implement controllers for new Agent()
 const requestListener = (req, res) => {
   switch (req.url) {
     case "/api/ping":
@@ -12,7 +12,7 @@ const requestListener = (req, res) => {
       break;
     case "/":
       res.writeHead(200);
-      res.end("Node-http-fe-agent");
+      res.end("Node-http-api-fe-conn-reuse");
       break;
     default:
       res.writeHead(302, { Location: "/" });
